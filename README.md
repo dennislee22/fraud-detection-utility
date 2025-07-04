@@ -59,8 +59,7 @@ To give our analysis a real-world context, we used folium to plot every consumer
 When you zoom in, you can click on any consumer to see their status and anomaly score, providing an intuitive and actionable view of the data.
 <img width="1443" alt="image" src="https://github.com/user-attachments/assets/db7dae6e-4bf8-459a-9460-a97ced48baf6" />
 
-A Note on "Accuracy" in Unsupervised Learning
-How accurate is our model? This is a tricky question in unsupervised learning because we don't have "true" labels to compare against. The model's performance is judged by its ability to assign low anomaly scores to the outliers we intentionally created while keeping the scores for normal consumers close to zero.
+As we don't have "true" labels to compare against, the model's performance is judged by its ability to assign low anomaly scores to the outliers we intentionally created while keeping the scores for normal consumers close to zero.
 
 The contamination parameter in the Isolation Forest model acts as a sensitivity knob. We set it to 0.05 (5%), telling the model to set its anomaly threshold such that it flags about 5% of the data as anomalous. This is why our report might show 10 frauds when we only created 7—the model also found 3 other consumers whose usage was, by pure chance, statistically unusual enough to be flagged.
 
