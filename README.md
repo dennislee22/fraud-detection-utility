@@ -1,3 +1,12 @@
 # Fraud Detection for Utility/Electricity
-<img width="1024" alt="image" src="https://github.com/user-attachments/assets/ec6b7131-e723-4c04-b816-1586be39d4a0" />
+<img width="1399" alt="image" src="https://github.com/user-attachments/assets/91274857-e492-4a3f-8856-d5da4abe4938" />
+
+<img width="1443" alt="image" src="https://github.com/user-attachments/assets/db7dae6e-4bf8-459a-9460-a97ced48baf6" />
+
+<img width="1439" alt="image" src="https://github.com/user-attachments/assets/72d3679f-956f-484c-b0ab-040dcc38c1a0" />
+
+
+
+
+
 
