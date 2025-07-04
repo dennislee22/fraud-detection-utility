@@ -2,9 +2,8 @@
 
 <img width="1399" alt="image" src="https://github.com/user-attachments/assets/91274857-e492-4a3f-8856-d5da4abe4938" />
 
-Electricity fraud, from meter tampering to illegal connections, costs utility companies millions of dollars annually. Catching these fraudsters is a classic cat-and-mouse game, but machine learning offers a powerful new weapon. In this post, we'll walk through a complete, end-to-end project to build an unsupervised anomaly detection system that can flag suspicious electricity consumption patterns.
-
-This article covers:
+Electricity fraud, from meter tampering to illegal connections, costs utility companies millions of dollars annually. Catching these fraudsters is a classic cat-and-mouse game, but ML offers a powerful new weapon. This article illustrates an unsupervised anomaly detection system that can flag suspicious electricity consumption patterns.
+The [script](fraud-map.ipynb) covers:
 
 1. Simulating a realistic dataset.
 2. Engineering features to highlight abnormal behavior.
