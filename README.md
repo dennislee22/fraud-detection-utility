@@ -1,4 +1,4 @@
-# Fraud Detection for Utility/Electricity with Unsupervised Learning
+# Detecting Electricity Fraud with Unsupervised Learning
 
 <img width="1399" alt="image" src="https://github.com/user-attachments/assets/91274857-e492-4a3f-8856-d5da4abe4938" />
 
