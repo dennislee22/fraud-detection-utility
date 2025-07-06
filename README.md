@@ -1,6 +1,6 @@
 # Detecting Electricity Fraud with Unsupervised Learning
 
-<img width="1399" alt="image" src="https://github.com/user-attachments/assets/91274857-e492-4a3f-8856-d5da4abe4938" />
+![fraud-utility](https://github.com/user-attachments/assets/918877db-e02d-42f0-94c5-12b523f10376)
 
 Electricity fraud, from meter tampering to illegal connections, costs utility companies millions of dollars annually. Catching these fraudsters is a classic cat-and-mouse game, but ML offers a powerful new weapon. This article illustrates an unsupervised anomaly detection system that can flag suspicious electricity consumption patterns.
 The [script](fraud-map.ipynb) covers:
