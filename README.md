@@ -29,7 +29,7 @@ The code does the following:
 The final output is a feature matrix where each row represents a consumer's year-long behavior, described by 12 deviation values. This is what our model will learn from.
 
 ## Step 3: Model Selection - Why IsolationForest?
-For unsupervised anomaly detection, `solationForest` is an excellent and highly recommended algorithm.
+For unsupervised anomaly detection, `IsolationForest` is an excellent and highly recommended algorithm.
 
 How it Works:
 Imagine trying to describe a single "abnormal" data point in a large crowd. It's often easier to isolate it than to describe the entire "normal" crowd. `IsolationForest` is built on this principle. It creates a forest of random decision trees. The core idea is that anomalies are "few and different," meaning they are easier to separate from the rest of the data. In a random tree, a fraudulent data point will likely be isolated with fewer splits, resulting in a shorter path from the root of the tree. The model calculates an "anomaly score" based on this average path length.
