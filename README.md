@@ -50,8 +50,7 @@ Negative Outliers (Red): These are consumers with significantly lower usage than
 Positive Outliers (Orange): These consumers use significantly more energy than their peers, which could indicate energy theft or other undeclared activities.
 <img width="1439" alt="image" src="https://github.com/user-attachments/assets/72d3679f-956f-484c-b0ab-040dcc38c1a0" />
 
-The Interactive Map
-To give our analysis a real-world context, we used folium to plot every consumer on a map of Kuala Lumpur. This is incredibly powerful for operational teams who need to investigate flagged locations. By using MarkerCluster, we can handle hundreds of points without cluttering the map.
+To give our analysis a real-world context, we used folium to plot every consumer on a map of Kuala Lumpur. This is incredibly powerful for operational teams who need to investigate flagged locations. By using `MarkerCluster`, we can handle hundreds of points without cluttering the map.
 
 When you zoom in, you can click on any consumer to see their status and anomaly score, providing an intuitive and actionable view of the data.
 <img width="1443" alt="image" src="https://github.com/user-attachments/assets/db7dae6e-4bf8-459a-9460-a97ced48baf6" />
