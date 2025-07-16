@@ -7,7 +7,7 @@ The [script](fraud-map.ipynb) covers:
 
 1. Simulating a realistic dataset.
 2. Engineering features to highlight abnormal behavior.
-3. Training an IsolationForest model and understanding why it's the right tool for the job.
+3. Training an `IsolationForest` model and understanding why it's the right tool for the job.
 4. Visualizing the results with Matplotlib and an interactive Folium map.
 
 ## Step 1: You Can't Build a Model Without Data
@@ -28,25 +28,23 @@ The code does the following:
 
 The final output is a feature matrix where each row represents a consumer's year-long behavior, described by 12 deviation values. This is what our model will learn from.
 
-## Step 3: Model Selection - Why Isolation Forest?
-For unsupervised anomaly detection, Isolation Forest is an excellent and highly recommended algorithm.
+## Step 3: Model Selection - Why IsolationForest?
+For unsupervised anomaly detection, `solationForest` is an excellent and highly recommended algorithm.
 
 How it Works:
-Imagine trying to describe a single "abnormal" data point in a large crowd. It's often easier to isolate it than to describe the entire "normal" crowd. Isolation Forest is built on this principle. It creates a forest of random decision trees. The core idea is that anomalies are "few and different," meaning they are easier to separate from the rest of the data. In a random tree, a fraudulent data point will likely be isolated with fewer splits, resulting in a shorter path from the root of the tree. The model calculates an "anomaly score" based on this average path length.
+Imagine trying to describe a single "abnormal" data point in a large crowd. It's often easier to isolate it than to describe the entire "normal" crowd. `IsolationForest` is built on this principle. It creates a forest of random decision trees. The core idea is that anomalies are "few and different," meaning they are easier to separate from the rest of the data. In a random tree, a fraudulent data point will likely be isolated with fewer splits, resulting in a shorter path from the root of the tree. The model calculates an "anomaly score" based on this average path length.
 
 Why it's a Great Choice:
-Designed for Anomalies: Unlike clustering algorithms (like K-Means) that find groups, Isolation Forest is specifically built to find outliers.
+Designed for Anomalies: Unlike clustering algorithms (like K-Means) that find groups, `IsolationForest` is specifically built to find outliers.
 Efficient: It's computationally fast and scales well to large datasets.
 No Assumption of Normality: It doesn't require the "normal" data to follow a specific statistical distribution.
 The model is trained on our matrix of 12-month deviation vectors and saved to a file (fraud-model.pkl) for later use.
 
 ## Step 4: Making Predictions and Visualizing Results
 With a trained model, we can now analyze new data. Our prediction scripts load the model and run new consumer data through the same feature engineering pipeline to generate a 12-month deviation vector. The model then assigns an anomaly score.
-
 A simple report is good, but visualizations are better.
 
 ### The Scatter Plot
-This plot provides a clear view of the model's effectiveness.
 Normal Consumers (Blue): Cluster tightly around the 0% deviation line, which represents the community average.
 Negative Outliers (Red): These are consumers with significantly lower usage than their peers (e.g., -80% deviation). This is a strong indicator of meter tampering.
 Positive Outliers (Orange): These consumers use significantly more energy than their peers, which could indicate energy theft or other undeclared activities.
@@ -60,7 +58,7 @@ When you zoom in, you can click on any consumer to see their status and anomaly 
 
 As we don't have "true" labels to compare against, the model's performance is judged by its ability to assign low anomaly scores to the outliers we intentionally created while keeping the scores for normal consumers close to zero.
 
-The contamination parameter in the Isolation Forest model acts as a sensitivity knob. We set it to 0.05 (5%), telling the model to set its anomaly threshold such that it flags about 5% of the data as anomalous. This is why our report might show 10 frauds when we only created 7—the model also found 3 other consumers whose usage was, by pure chance, statistically unusual enough to be flagged.
+The contamination parameter in the `IsolationForest` model acts as a sensitivity knob. We set it to 0.05 (5%), telling the model to set its anomaly threshold such that it flags about 5% of the data as anomalous. This is why our report might show 10 frauds when we only created 7—the model also found 3 other consumers whose usage was, by pure chance, statistically unusual enough to be flagged.
 
 This project demonstrates a complete workflow for building an effective, unsupervised fraud detection system. By focusing on strong feature engineering and choosing the right algorithm for the job, we were able to build a model that not only identifies suspicious behavior but also provides interpretable and actionable results through powerful visualizations.
 
